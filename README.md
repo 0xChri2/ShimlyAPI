@@ -9,7 +9,7 @@ ID: 5032
 
     include path_to_file
 	
-	$shimly = new Shimly($SMI_ID, $SMP_PW);    
+	$shimly = new Shimly($SMI_ID, $SMP_PW, $MODE); // MODE CAN BE 'shimlys' OR 'boostpoints'    
 
     $shimly->hasSuccess() - return true if the last request was successful
     $shimly->validate($sID, $sPW) - validates provided Shimly credentials
