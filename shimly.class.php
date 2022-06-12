@@ -8,7 +8,7 @@
    * @copyright  Copyright (c) 2022, FlareCO
    * @license    http://opensource.org/licenses/gpl-3.0.html GNU Public License
    * @link       http://www.shimly.de
-   * @version    1.0
+   * @version    1.1
    */
 
 /*
@@ -26,8 +26,6 @@
             - { "code": "1001", "smi": "9999999", "user": "200" }
         - payOut($sID, $sPW, $amount, $reference) - credit the provided amount to the provided Shimly account
             - { "code": "1001", "smi": "9999999", "user": "100" }
-        - rate($currency) - returns the current rate of the provided currency
-            - does not work
         - smiBalance() - returns the balance of the provided SMI account
             - { "code": "1001", "smi": "100", "vault": "0" }
 
@@ -265,35 +263,7 @@ class Shimly {
         }
 
     }
-
-    /*
-    /**
-     * (Deprecated) Returns the exchange rate of the selected currency
-     * 
-     * @param string $currency Currency to check ex. 'klamm'
-     * @access public
-     * @return json|exception
-     *
-    public function rate($currency = 'klamm'){
-
-        $data = array(
-            'mi_id' => $this->appID,
-            'mi_pw' => $this->appSecret,
-            'currency' => $currency
-        );
-
-        $result = $this->curl($this->baseURL.$this->mode.'/kurs.php?'.http_build_query($data));
-        
-        $parse = explode('|', $result);
-        if($parse[0] == 1001){
-            $this->success = true;
-            return $this->layout($parse, 'rate');
-        } else {
-            throw new Exception($this->codeToText($parse[0]), $parse[0]);
-        }
-
-    }
-    */
+    
 
     /**
      * Returns the current balance of the SMI account.
