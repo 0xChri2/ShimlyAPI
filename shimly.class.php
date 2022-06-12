@@ -8,7 +8,7 @@
    * @copyright  Copyright (c) 2022, FlareCO
    * @license    http://opensource.org/licenses/gpl-3.0.html GNU Public License
    * @link       http://www.shimly.de
-   * @version    1.1
+   * @version    1.2
    */
 
 /*
